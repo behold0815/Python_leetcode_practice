@@ -1,0 +1,125 @@
+[
+    {
+        "label": "TypeVar",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Generic",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "add_two",
+        "importPath": "add_two",
+        "description": "add_two",
+        "isExtraImport": true,
+        "detail": "add_two",
+        "documentation": {}
+    },
+    {
+        "label": "add_two",
+        "kind": 2,
+        "importPath": "src.add_two",
+        "description": "src.add_two",
+        "peekOfCode": "def add_two(a, b) -> int:\n    return a + b\nif __name__ == \"__main__\":\n    print(add_two(4, 9))",
+        "detail": "src.add_two",
+        "documentation": {}
+    },
+    {
+        "label": "l1",
+        "kind": 5,
+        "importPath": "src.Add_Two_Numbers",
+        "description": "src.Add_Two_Numbers",
+        "peekOfCode": "l1 = [2,4,3]\nl2 = [5,6,4]\noutput = []\ncarrier = 0\nfor index in range(len(l1)):\n    temp = l1[index] + l2[index] + carrier\n    carrier, mod = divmod(temp, 10)\n    output.append(mod)\n# print(output)\n# class ListNode:",
+        "detail": "src.Add_Two_Numbers",
+        "documentation": {}
+    },
+    {
+        "label": "l2",
+        "kind": 5,
+        "importPath": "src.Add_Two_Numbers",
+        "description": "src.Add_Two_Numbers",
+        "peekOfCode": "l2 = [5,6,4]\noutput = []\ncarrier = 0\nfor index in range(len(l1)):\n    temp = l1[index] + l2[index] + carrier\n    carrier, mod = divmod(temp, 10)\n    output.append(mod)\n# print(output)\n# class ListNode:\n#     def __init__(self, data = 0, next = None):",
+        "detail": "src.Add_Two_Numbers",
+        "documentation": {}
+    },
+    {
+        "label": "output",
+        "kind": 5,
+        "importPath": "src.Add_Two_Numbers",
+        "description": "src.Add_Two_Numbers",
+        "peekOfCode": "output = []\ncarrier = 0\nfor index in range(len(l1)):\n    temp = l1[index] + l2[index] + carrier\n    carrier, mod = divmod(temp, 10)\n    output.append(mod)\n# print(output)\n# class ListNode:\n#     def __init__(self, data = 0, next = None):\n#         self._data = data",
+        "detail": "src.Add_Two_Numbers",
+        "documentation": {}
+    },
+    {
+        "label": "carrier",
+        "kind": 5,
+        "importPath": "src.Add_Two_Numbers",
+        "description": "src.Add_Two_Numbers",
+        "peekOfCode": "carrier = 0\nfor index in range(len(l1)):\n    temp = l1[index] + l2[index] + carrier\n    carrier, mod = divmod(temp, 10)\n    output.append(mod)\n# print(output)\n# class ListNode:\n#     def __init__(self, data = 0, next = None):\n#         self._data = data\n#         self._next = next",
+        "detail": "src.Add_Two_Numbers",
+        "documentation": {}
+    },
+    {
+        "label": "Node",
+        "kind": 6,
+        "importPath": "src.List_Node",
+        "description": "src.List_Node",
+        "peekOfCode": "class Node:\n    \"\"\"Create a node.\"\"\"\n    def __init__(self, val, next = None):\n        self.val = val\n        self.next = next\nT = TypeVar('T')\nclass LinkedList(Generic[T]):\n    \"\"\"Create a linked list.\"\"\"\n    length = 0\n    def __init__(self):",
+        "detail": "src.List_Node",
+        "documentation": {}
+    },
+    {
+        "label": "LinkedList",
+        "kind": 6,
+        "importPath": "src.List_Node",
+        "description": "src.List_Node",
+        "peekOfCode": "class LinkedList(Generic[T]):\n    \"\"\"Create a linked list.\"\"\"\n    length = 0\n    def __init__(self):\n        self.head = None\n        self.tail = None\n    def list_nodes(self):\n        \"\"\"List nodes.\"\"\"\n        current_node = self.head\n        list_temp = []",
+        "detail": "src.List_Node",
+        "documentation": {}
+    },
+    {
+        "label": "T",
+        "kind": 5,
+        "importPath": "src.List_Node",
+        "description": "src.List_Node",
+        "peekOfCode": "T = TypeVar('T')\nclass LinkedList(Generic[T]):\n    \"\"\"Create a linked list.\"\"\"\n    length = 0\n    def __init__(self):\n        self.head = None\n        self.tail = None\n    def list_nodes(self):\n        \"\"\"List nodes.\"\"\"\n        current_node = self.head",
+        "detail": "src.List_Node",
+        "documentation": {}
+    },
+    {
+        "label": "two_sum",
+        "kind": 2,
+        "importPath": "src.two_sum",
+        "description": "src.two_sum",
+        "peekOfCode": "def two_sum(nums:list, target:int) -> list:\n    n = len(nums)\n    for index_i in range(n-1):\n        for index_j in range(index_i + 1, n):\n            if nums[index_i] + nums[index_j] == target:\n                return [index_i, index_j]\n    return []\nif __name__ == \"__main__\":\n    print(two_sum([2, -4, 11, -15], -19))",
+        "detail": "src.two_sum",
+        "documentation": {}
+    },
+    {
+        "label": "test_add_two",
+        "kind": 2,
+        "importPath": "tests.test_add_two",
+        "description": "tests.test_add_two",
+        "peekOfCode": "def test_add_two():\n    assert add_two(2, 3) == 5",
+        "detail": "tests.test_add_two",
+        "documentation": {}
+    }
+]
