@@ -16,7 +16,6 @@ def test_append_node():
     assert test.append_node("A")[1] == "A"
 
 
-@pytest.mark.test
 @pytest.mark.parametrize(argnames="not_list", argvalues=[("A"), (5), ((3, 7, 0))])
 def test_append_list(not_list):
     test = LinkedList()
@@ -24,12 +23,27 @@ def test_append_list(not_list):
     assert test.append_list(test_list) == True
 
 
-# TODO:test_delete_node_with_index
-# TODO:查coverage指令
-@pytest.mark.test
 def test_delete_node_with_index():
     test = LinkedList()
     test.append_list(test_list)
     assert test.delete_node_with_index(6) == False
     assert test.delete_node_with_index(3) == True
     assert test.delete_node_with_index(1) == True
+
+
+def test_delete_node_with_val():
+    test = LinkedList()
+    test.append_node(5)
+    assert test.delete_node_with_val(6) == False
+    assert test.delete_node_with_val(5) == True
+    assert test.delete_node_with_val(5) == False
+    test.append_list(test_list)
+    assert test.delete_node_with_val(4) == True
+
+
+@pytest.mark.test
+def test_find_node_with_val():
+    test = LinkedList()
+    test.append_node(5)
+    assert test.find_node_with_val(6) == False
+    assert test.find_node_with_val(5) == True

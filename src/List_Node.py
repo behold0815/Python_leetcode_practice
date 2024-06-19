@@ -96,12 +96,16 @@ class LinkedList(Generic[T]):
         self.length -= 1
         return True
 
-    def delete_node_with_val(self, val: T):
+    def delete_node_with_val(self, val: T) -> bool:
         """Delete a node with value.
 
         Args:
             val (T): Gereric value.
         """
+        if not self.head:
+            print("The linked list is empty.")
+            return False
+
         current_node = self.head
         last_node = current_node
         msg = f"=== The node {val} is deleted. ==="
@@ -110,7 +114,7 @@ class LinkedList(Generic[T]):
             self.head = self.head.next
             self.length -= 1
             print(msg)
-            return
+            return True
 
         while current_node and current_node.val != val:
             last_node = current_node
@@ -118,13 +122,45 @@ class LinkedList(Generic[T]):
 
         if current_node is None:
             print(
-                "=== The value you want to delete does not exist in linked list. === "
+                f"=== The value {val} you want to delete does not exist in linked list. === "
             )
-        else:
-            last_node.next = current_node.next
-            print(msg)
-            self.length -= 1
+            return False
 
+        last_node.next = current_node.next
+        self.length -= 1
+        print(msg)
+        return True
+
+    def find_node_with_val(self, val: T) -> bool:
+        """find a node with value.
+
+        Args:
+            val (T): Gereric value.
+        """
+        if not self.head:
+            print("The linked list is empty.")
+            return False
+
+        current_node = self.head
+        last_node = current_node
+        msg = f"=== The node value {val} is in linked list. ==="
+
+        if val == self.head.val:
+            print(msg)
+            return True
+
+        while current_node and current_node.val != val:
+            last_node = current_node
+            current_node = current_node.next
+
+        if current_node is None:
+            print(
+                f"=== The value {val} you want to find does not exist in linked list. === "
+            )
+            return False
+
+        print(msg)
+        return True
 
 if __name__ == "__main__":
     LN = LinkedList()
@@ -133,5 +169,11 @@ if __name__ == "__main__":
     # LN.append_list(3)
     print(f"The linked list:{LN.list_nodes()}")
     LN.delete_node_with_index(2)
-    # LN.delete_node_with_val("A")
     print(f"The linked list:{LN.list_nodes()}")
+    LN.delete_node_with_val("A")
+    print(f"The linked list:{LN.list_nodes()}")
+    LN.delete_node_with_val(6)
+    print(f"The linked list:{LN.list_nodes()}")
+    print(f"The node '{LN.append_node("A")[1]}' is appended into linked list.")
+    print(f"The linked list:{LN.list_nodes()}")
+    LN.find_node_with_val(3)
